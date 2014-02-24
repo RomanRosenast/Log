@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<LINK href="style.css" rel="stylesheet" type="text/css">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src = "Script.js"></script>
+		<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class = "screen">
+			<header>
+				<p class = "headertext">LOG</p>
+			</header>
+			<div hidden class = "entry" id = "entryTemplate">
+				<a href = "#" class = "trash"><i class="fa fa-trash-o"></i></a>
+				<p class = "classHere">History</p>
+				<p class = "dateHere">Due: Monday</p>
+				<p class = "nameHere">Graphic Organizer</p>
+			</div>
+		<div id = "entryList">
+<!-- 			<div class = "entry">
+				<p class = "classHere">History</p>
+				<p class = "dateHere">Due: Monday</p>
+				<p class = "nameHere">Graphic Organizer</p>
+			</div> -->
+		</div>
+			<div class = "editEntry" id = "editEntry">
+				<div class = "cancel" id = "cancelButton">&#10006;</div>
+				<p class = "editName">Name:</p>
+				<input class = "enterText" id = "nameTextBox"></input>
+				<p class = "editDate">Due:</p>
+				<input class = "enterText" id = "dateTextBox"></input>
+				<p class = "editClass">Class:</p>
+				<input class = "enterText" id = "classTextBox"></input>
+				<button id = "button">Done</button>
+			</div>
+			<div hidden class = "entry" id = "plusButton">
+				<p class = "addentry">+</p>
+			</div>
+		</div>
+	</body>
+</html>
