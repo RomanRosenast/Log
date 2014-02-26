@@ -1,3 +1,22 @@
+	function getTaskProperties(node) {
+		var data = {};
+		data.name = $(node).children(".nameHere").innerHtml;
+		data.date = $(node).children(".dateHere").innerHtml;
+		data.class = $(node).children(".classhere").innerHtml;
+		console.log($(node).children(".nameHere"));
+		//console.log($(node).children(".nameHere").innerHtml);
+		return data;	}
+
+	function getAllTasks() {
+		var tasks = [];
+		$(".entry") .each(function (i, e) {
+			getTaskProperties(e);
+		})
+		for (var i; i<tasks.length; i++) {
+			console.log(tasks[i]);
+		}
+	}
+
 	window.onload = function () {
 		jQuery("#button").click(function (e) {
 			var element = jQuery("#entryTemplate").clone().appendTo("#entryList").show();
@@ -21,9 +40,11 @@
 			$ ("#editEntry") .hide();
 			$ ("#plusButton") .show();
 			});
-		$(".trash").click(function (h) {
-			$ (".entry") .hide();
-			console.log("hello world");
+
+		$(".trashButton") .click(function () {
+			console.log ("hello")
+			// $(".entry").hide;
+			// h.parent() .hide();
 		});
 
 // var pressTimer
@@ -39,3 +60,13 @@
 // });
 
 		}
+
+if (window.localStorage) { // checks if browser support localStorage
+  if (localStorage['testKey']) { // checks if value exists
+    console.log('Value exist on page load in localstorage for key testKey : ', localStorage['testKey']);
+  }
+  localStorage['testKey'] = 'Hi again!'; // stores value in localstorage
+}
+else {
+ console.log('your browser dont support localstorage');
+}

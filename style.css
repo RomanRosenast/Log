@@ -146,9 +146,21 @@ button {
 	color: #C75233;
 }
 
-.trash {
+.trashButton {
 	float: left;
 	margin-left: 5px;
-	margin-right: 5px;
 	margin-top: 5px;
+}
+
+.trashButton:hover {
+	cursor: pointer;
+	color: #C75233;
+}
+
+/* media Queries */
+
+@media all and (max-width: 320px) {
+	.screen {
+		margin: auto auto auto auto;
+	}
 }
