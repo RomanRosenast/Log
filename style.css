@@ -50,6 +50,7 @@ header {
 	margin-top: 5px;
 	padding-left: 10px;
 	font-size: 20px;
+	margin-left: 20px;
 }
 
 .dateHere {
@@ -144,6 +145,7 @@ button {
 	margin-top: 10px;
 	position: absolute;
 	left: 60%;
+	font-size: 20px;
 }
 
 .cancel:hover {
@@ -153,8 +155,10 @@ button {
 
 .trashButton {
 	float: left;
+	position: absolute;
 	margin-left: 5px;
 	margin-top: 5px;
+	font-size: 20px;
 }
 
 .trashButton:hover {

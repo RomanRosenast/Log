@@ -1,72 +1,102 @@
 	function getTaskProperties(node) {
 		var data = {};
-		data.name = $(node).children(".nameHere").innerHtml;
-		data.date = $(node).children(".dateHere").innerHtml;
-		data.class = $(node).children(".classhere").innerHtml;
-		console.log($(node).children(".nameHere"));
+		data.name = $(node).children(".nameHere").html();
+		data.date = $(node).children(".dateHere").html();
+		data.class = $(node).children(".classHere").html();
 		//console.log($(node).children(".nameHere").innerHtml);
 		return data;	}
 
 	function getAllTasks() {
-		var tasks = [];
+		var tasks = {};
 		$(".entry") .each(function (i, e) {
-			getTaskProperties(e);
+			if ( getTaskProperties(e).name
+				&& getTaskProperties(e).date
+				&& getTaskProperties(e).class) {
+				tasks.push(getTaskProperties(e));
+			}
 		})
-		for (var i; i<tasks.length; i++) {
-			console.log(tasks[i]);
-		}
+			console.log(tasks);
 	}
 
 	window.onload = function () {
-		jQuery("#button").click(function (e) {
-			var element = jQuery("#entryTemplate").clone().appendTo("#entryList").show();
-			element.children (".classHere") .html (
-			$ ("#classTextBox") .val() );
-			$ ("#classTextBox") .val("");
-			element.children (".nameHere") .html (
-			$ ("#nameTextBox") .val() );
-			$ ("#nameTextBox") .val("");
-			element.children (".dateHere") .html ("Due: " +
-			$ ("#dateTextBox") .val() );
-			$ ("#dateTextBox") .val("");
-			$ (".editEntry") .hide();
-			$ ("#plusButton") .show();
-		});
-		$ ("#plusButton") .click(function (f) {
-			$ ("#plusButton") .hide();
-			$ ("#editEntry") .show();
-		});
-		$("#cancelButton") .click (function (g) {
-			$ ("#editEntry") .hide();
-			$ ("#plusButton") .show();
-			});
+	    // if (window.localStorage) {
+	    //     if (localStorage["tasks"]) {
+	    //        console.log(localStorage["tasks"]);
+	    //         var tasks = JSON.parse(localStorage["tasks"]);
+	    //         for (var i = 0; i < tasks.length; i++) {
+	    //             var taskz = tasks[i];
+	    //             var element = jQuery("#entryTemplate").clone().appendTo("#entryList").show();
+	    //             element.children(".classHere").html(
+	    //             taskz.class);
+	    //             element.children(".nameHere").html(
+	    //             taskz.name);
+	    //             element.children(".dateHere").html(
+	    //             taskz.date);
+	    //         }
+	    //     }
+	    // }
+	    jQuery("#button").click(function (e) {
+	        var element = jQuery("#entryTemplate").clone().appendTo("#entryList").show();
+	        element.children(".classHere").html(
+	        $("#classTextBox").val());
+	        $("#classTextBox").val("");
+	        element.children(".nameHere").html(
+	        $("#nameTextBox").val());
+	        $("#nameTextBox").val("");
+	        element.children(".dateHere").html("Due: " + $("#dateTextBox").val());
+	        $("#dateTextBox").val("");
+	        $(".editEntry").hide();
+	        $("#plusButton").show();
+	        // if (window.localStorage) {
+	        //     console.log("saving");
+	        //     localStorage["tasks"] = JSON.stringify(getAllTasks());
+	        //     console.log(JSON.stringify(getAllTasks()));
+	        // }
+	        			console.log($("div.trashButton"));
+		  $("div.trashButton").click(function() {
+		    console.log("This button works!");
+		    $(this).parent().hide();
+		    return false;
+		  });
+	    });
+	    $("#plusButton").click(function (f) {
+	        $("#plusButton").hide();
+	        $("#editEntry").show();
+	    });
+	    $("#cancelButton").click(function (g) {
+	        $("#editEntry").hide();
+	        $("#plusButton").show();
+	    });
 
-		$(".trashButton") .click(function () {
-			console.log ("hello")
-			// $(".entry").hide;
-			// h.parent() .hide();
-		});
+	    // $(".trashButton") .click(function () {
+	    // 	console.log ("hello")
+	    // 	// $(".entry").hide;
+	    // 	// h.parent() .hide();
+	    // });
 
-// var pressTimer
+	}
 
-// $(".deleteEntry").mouseup(function(){
-//   clearTimeout(pressTimer)
-//   // Clear timeout
-//   return false;
-// }).mousedown(function(){
-//   // Set timeout
-//   pressTimer = window.setTimeout(function() { ... your code ...},1000)
-//   return false; 
-// });
+	// $(document).ready
+			console.log($("div.trashButton"));
+		  $("div.trashButton").click(function() {
+		    console.log("This button works!");
+		    $(this).parent().hide();
+		    return false;
+		  });
 
-		}
 
-if (window.localStorage) { // checks if browser support localStorage
-  if (localStorage['testKey']) { // checks if value exists
-    console.log('Value exist on page load in localstorage for key testKey : ', localStorage['testKey']);
-  }
-  localStorage['testKey'] = 'Hi again!'; // stores value in localstorage
-}
-else {
- console.log('your browser dont support localstorage');
-}
+	    // $(".trashButton").click(function () {
+	    //     $(".trashButton").parent().hide();
+	    //     console.log("hello");
+	    // })
+
+
+// if (window.localStorage) { // checks if browser support localStorage
+//   if (localStorage['testKey']) { // checks if value exists
+//     console.log('Value exist on page load in localstorage for key testKey : ', localStorage['testKey']);
+//   }
+//   localStorage['testKey'] = 'Hi again!'; // stores value in localstorage
+// }
+// else {
+//  console.log('your browser dont support localstorage');
+// }
