@@ -99,20 +99,3 @@
 // else {
 //  console.log('your browser dont support localstorage');
 // }
-
-function isIOS() {
-    var userAgent = window.navigator.userAgent.toLowerCase();
-    return /iphone|ipad|ipod/.test( userAgent );
-};
-
-function isStandalone() {
-    return ( isIOS() && window.navigator.standalone );
-};
-
-window.onload = function () {
-    if( isStandalone() || !isIOS() ) { //either ios+standalone or not ios
-        //start app
-    } else {
-        //display add to homescreen page
-    };
-};
