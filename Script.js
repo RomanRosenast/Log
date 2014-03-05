@@ -79,7 +79,6 @@
 	// $(document).ready
 			console.log($("div.trashButton"));
 		  $("div.trashButton").click(function() {
-		    console.log("This button works!");
 		    $(this).parent().hide();
 		    return false;
 		  });

@@ -172,5 +172,6 @@ button {
 @media screen and (max-width: 375px) {
 	.screen {
 	width: 100%;
+	height: 100%;
 	}
 }
