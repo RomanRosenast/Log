@@ -169,7 +169,7 @@ button {
 
 /* media Queries */
 
-@media screen and (max-width: 375px) {
+@media (max-width: 375px) {
 	.screen {
 	width: 100%;
 	height: 100%;
