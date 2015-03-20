@@ -1,8 +1,3 @@
-	document.ontouchmove = function(event){
-    event.preventDefault();
-    console.log("no more iOS scrolling!");
-	};
-
 	function getTaskProperties(node) {
 		var data = {};
 		data.name = $(node).children(".nameHere").html();
