@@ -1,9 +1,13 @@
+	document.ontouchmove = function(event){
+    event.preventDefault();
+    console.log("no more iOS scrolling!");
+	};
+
 	function getTaskProperties(node) {
 		var data = {};
 		data.name = $(node).children(".nameHere").html();
 		data.date = $(node).children(".dateHere").html();
 		data.class = $(node).children(".classHere").html();
-		//console.log($(node).children(".nameHere").innerHtml);
 		return data;	}
 
 	function getAllTasks() {
@@ -98,12 +102,8 @@
 // }
 // else {
 //  console.log('your browser dont support localstorage');
-// }
+// };
 
-window.addEventListener("load",function() {
-    // Set a timeout...
-    setTimeout(function(){
-        // Hide the address bar!
-        window.scrollTo(0, 1);
-    }, 0);
-});
+if (window.navigator.standalone) {
+    console.log("It worked!");
+};
